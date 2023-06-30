@@ -50,7 +50,7 @@ jobs:
       - name: Making single PCBs
         run: |
           mkdir -p pdfs/PCBsingle/
-          for layer in 'F.Cu', 'F.Silkscreen', 'B.Cu', 'B.Silkscreen']; do
+          for layer in 'F.Cu' 'F.Silkscreen' 'B.Cu' 'B.Silkscreen'; do
             kicad-cli pcb export pdf LEDPulser/LEDPulser.kicad_pcb                    --layers=${layer} --output ./pdfs/PCBsingle/LEDPulser.${layer}.pdf
             kicad-cli pcb export pdf RPiHat/RPiHatSensor/RPiHatSensor.kicad_pcb       --layers=${layer} --output ./pdfs/PCBsingle/RPiHatSensor.${layer}.pdf
             kicad-cli pcb export pdf RPiHat/RPiHatHVLVPower/RPiHatHVLVPower.kicad_pcb --layers=${layer} --output ./pdfs/PCBsingle/RPiHatHVLVPower.${layer}.pdf
@@ -62,7 +62,7 @@ jobs:
           cd Panel/
           bash ./kikit_script.py
           cd ../
-          for layer in 'F.Cu', 'F.Silkscreen', 'B.Cu', 'B.Silkscreen']; do
+          for layer in 'F.Cu' 'F.Silkscreen' 'B.Cu' 'B.Silkscreen'; do
             kicad-cli pcb export pdf Panel/panel_LEDPulser.kicad_pcb --layers=${layer} --output ./pdfs/PCBPanels/LEDPulser.${layer}.pdf
             kicad-cli pcb export pdf Panel/panel_Sensor.kicad_pcb    --layers=${layer} --output ./pdfs/PCBPanels/RPiHatSensor.${layer}.pdf
             kicad-cli pcb export pdf Panel/panel_HVLVPower.kicad_pcb --layers=${layer} --output ./pdfs/PCBPanels/RPiHatHVLVPower.${layer}.pdf
