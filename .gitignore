@@ -1,9 +1,11 @@
-# Ignore everything by default 
+# Ignore everything by default
 
 **/*.*
 **/fp*
-!.gitignore 
+!**/*.md
+!.gitignore
 !**/*.kicad*
 !**/*.pretty
 Panel/*
 !Panel/kikit_script.py
+!Panel/README.md
