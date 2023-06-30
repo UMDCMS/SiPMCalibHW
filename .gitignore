@@ -5,3 +5,5 @@
 !.gitignore 
 !**/*.kicad*
 !**/*.pretty
+Panel/*
+!Panel/kikit_script.py
