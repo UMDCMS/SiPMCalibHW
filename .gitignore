@@ -1,11 +1,18 @@
 # Ignore everything by default
-
 **/*.*
 **/fp*
 !**/*.md
-!.gitignore
+
+# Files to track 
 !**/*.kicad*
 !**/*.pretty
+
+# Panel generation files
 Panel/*
 !Panel/kikit_script.py
 !Panel/README.md
+
+# Git/GitHub related files
+!.gitignore
+!.github/workflows/pdf_output.yaml
+
