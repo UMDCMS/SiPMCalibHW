@@ -12,9 +12,11 @@ jobs:
         pcb_layers: ['F.Cu', 'F.Silkscreen', 'B.Cu', 'B.Silkscreen']
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-python@v4
         with:
-          python-version: "3.11.3"
+          python-version: '3.11.3'
+
       - name: Install kicad with kikit
         run: |
           sudo apt update
@@ -24,29 +26,43 @@ jobs:
           sudo apt install
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install kikit
+
+      - name: Getting the empty respository
+        uses: actions/checkout@v3
+        with:
+          ref: 'pdfs'
+          path: './pdfs'
+
+      - name: Clean pdfs/ directory
+        run: |
+          rm -rf pdfs/*
+
       - name: Making schematics
         run: |
-          mkdir -p prints/schematics/
-          kicad-cli sch export pdf RPiHat/RPiHatHVLVPower/RPiHatHVLVPower.kicad_sch --output ./prints/schematics/RPiHatHVLVPower.pdf
-          kicad-cli sch export pdf RPiHat/RPiHatSensor/RPiHatSensor.kicad_sch       --output ./prints/schematics/RPiHatSensor.pdf
-          kicad-cli sch export pdf LEDPulser/LEDPulser.kicad_sch                    --output ./prints/schematics/LEDPulser.pdf
+          mkdir -p pdfs/schematics/
+          kicad-cli sch export pdf RPiHat/RPiHatHVLVPower/RPiHatHVLVPower.kicad_sch --output ./pdfs/schematics/RPiHatHVLVPower.pdf
+          kicad-cli sch export pdf RPiHat/RPiHatSensor/RPiHatSensor.kicad_sch       --output ./pdfs/schematics/RPiHatSensor.pdf
+          kicad-cli sch export pdf LEDPulser/LEDPulser.kicad_sch                    --output ./pdfs/schematics/LEDPulser.pdf
+
       - name: Making single PCBs
         run: |
-          mkdir -p prints/PCBsingle/
-          kicad-cli pcb export pdf LEDPulser/LEDPulser.kicad_pcb                    --layers=${{matrix.pcb_layers}} --output ./prints/PCBsingle/LEDPulser.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf RPiHat/RPiHatSensor/RPiHatSensor.kicad_pcb       --layers=${{matrix.pcb_layers}} --output ./prints/PCBsingle/RPiHatSensor.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf RPiHat/RPiHatHVLVPower/RPiHatHVLVPower.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./prints/PCBsingle/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
+          mkdir -p pdfs/PCBsingle/
+          kicad-cli pcb export pdf LEDPulser/LEDPulser.kicad_pcb                    --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBsingle/LEDPulser.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf RPiHat/RPiHatSensor/RPiHatSensor.kicad_pcb       --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBsingle/RPiHatSensor.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf RPiHat/RPiHatHVLVPower/RPiHatHVLVPower.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBsingle/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
+
       - name: Making panel PCBs
         run: |
-          mkdir -p prints/PCBPanels/
+          mkdir -p pdfs/PCBPanels/
           cd Panel/
-          bash ./kicad/kikit_script.py
+          bash ./kikit_script.py
           cd ../
-          kicad-cli pcb export pdf Panel/panel_LEDPulser.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./prints/PCBPanels/LEDPulser.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf Panel/panel_Sensor.kicad_pcb    --layers=${{matrix.pcb_layers}} --output ./prints/PCBPanels/RPiHatSensor.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf panel_HVLVPower.kicad_pcb       --layers=${{matrix.pcb_layers}} --output ./prints/PCBPanels/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./prints
+          kicad-cli pcb export pdf Panel/panel_LEDPulser.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBPanels/LEDPulser.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf Panel/panel_Sensor.kicad_pcb    --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBPanels/RPiHatSensor.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf panel_HVLVPower.kicad_pcb       --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBPanels/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
+
+      - name: Pushing to public PDF pages
+        run: |
+          git add --all
+          git commit -m "Updated from Github actions"
+          git push origin pdfs
