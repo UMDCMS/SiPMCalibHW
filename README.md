@@ -28,13 +28,15 @@ circuits. The values chosen takes is based on the available components at the
 CERN PCB assembly workshop.
 
 The HVLV supply board and Sensors board are designed to be mechanically
-compatible with the Raspberry Pi [Hat form factor][hat] so the 2 board can be
+compatible with the Raspberry Pi [Hat form factor][hat], so the 2 board can be
 directly mounted to the controller Raspberry Pi system.
 
-The accompanying software to control the Raspberry Pi systems can be found in
-this [repository][rpcont].
+For a set of design files that you can directly view in your browser, checkout
+the [`pdfs` branch][pdfs] of this repository. The accompanying software to
+control the Raspberry Pi systems can be found in this [repository][rpcont].
 
 [kicad]: https://www.kicad.org/
 [kikit]: https://github.com/yaqwsx/KiKit
 [hat]: https://github.com/raspberrypi/hats/blob/master/hat-board-mechanical.pdf
+[pdfs]: https://github.com/UMDCMS/SiPMCalibHW/tree/pdfs
 [rpcont]: https://github.com/UMDCMS/SiPMCalibControl
