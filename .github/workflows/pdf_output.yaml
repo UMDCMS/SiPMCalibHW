@@ -59,7 +59,7 @@ jobs:
           cd ../
           kicad-cli pcb export pdf Panel/panel_LEDPulser.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBPanels/LEDPulser.${{matrix.pcb_layer}}.pdf
           kicad-cli pcb export pdf Panel/panel_Sensor.kicad_pcb    --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBPanels/RPiHatSensor.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf panel_HVLVPower.kicad_pcb       --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBPanels/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf Panel/panel_HVLVPower.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBPanels/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
 
       - name: Pushing to public PDF pages
         run: |
