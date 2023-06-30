@@ -33,18 +33,18 @@ jobs:
       - name: Making single PCBs
         run: |
           mkdir -p prints/PCBsingle/
-          kicad-cli pcb export pdf LEDPulser/LEDPulser.kicad_pcb                    --layers=${{matrix.pcb_layer}} --output ./prints/PCBsingle/LEDPulser.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf RPiHat/RPiHatSensor/RPiHatSensor.kicad_pcb       --layers=${{matrix.pcb_layer}} --output ./prints/PCBsingle/RPiHatSensor.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf RPiHat/RPiHatHVLVPower/RPiHatHVLVPower.kicad_pcb --layers=${{matrix.pcb_layer}} --output ./prints/PCBsingle/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf LEDPulser/LEDPulser.kicad_pcb                    --layers=${{matrix.pcb_layers}} --output ./prints/PCBsingle/LEDPulser.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf RPiHat/RPiHatSensor/RPiHatSensor.kicad_pcb       --layers=${{matrix.pcb_layers}} --output ./prints/PCBsingle/RPiHatSensor.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf RPiHat/RPiHatHVLVPower/RPiHatHVLVPower.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./prints/PCBsingle/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
       - name: Making panel PCBs
         run: |
           mkdir -p prints/PCBPanels/
           cd Panel/
           bash ./kicad/kikit_script.py
           cd ../
-          kicad-cli pcb export pdf Panel/panel_LEDPulser.kicad_pcb --layers=${{matrix.pcb_layer}} --output ./prints/PCBPanels/LEDPulser.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf Panel/panel_Sensor.kicad_pcb    --layers=${{matrix.pcb_layer}} --output ./prints/PCBPanels/RPiHatSensor.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf panel_HVLVPower.kicad_pcb       --layers=${{matrix.pcb_layer}} --output ./prints/PCBPanels/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf Panel/panel_LEDPulser.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./prints/PCBPanels/LEDPulser.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf Panel/panel_Sensor.kicad_pcb    --layers=${{matrix.pcb_layers}} --output ./prints/PCBPanels/RPiHatSensor.${{matrix.pcb_layer}}.pdf
+          kicad-cli pcb export pdf panel_HVLVPower.kicad_pcb       --layers=${{matrix.pcb_layers}} --output ./prints/PCBPanels/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
