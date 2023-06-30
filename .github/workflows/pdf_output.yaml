@@ -13,9 +13,6 @@ on:
 jobs:
   make-pdf:
     runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        pcb_layers: ['F.Cu', 'F.Silkscreen', 'B.Cu', 'B.Silkscreen']
     steps:
       - uses: actions/checkout@v3
 
@@ -53,9 +50,11 @@ jobs:
       - name: Making single PCBs
         run: |
           mkdir -p pdfs/PCBsingle/
-          kicad-cli pcb export pdf LEDPulser/LEDPulser.kicad_pcb                    --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBsingle/LEDPulser.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf RPiHat/RPiHatSensor/RPiHatSensor.kicad_pcb       --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBsingle/RPiHatSensor.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf RPiHat/RPiHatHVLVPower/RPiHatHVLVPower.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBsingle/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
+          for layer in 'F.Cu', 'F.Silkscreen', 'B.Cu', 'B.Silkscreen']; do
+            kicad-cli pcb export pdf LEDPulser/LEDPulser.kicad_pcb                    --layers=${layer} --output ./pdfs/PCBsingle/LEDPulser.${layer}.pdf
+            kicad-cli pcb export pdf RPiHat/RPiHatSensor/RPiHatSensor.kicad_pcb       --layers=${layer} --output ./pdfs/PCBsingle/RPiHatSensor.${layer}.pdf
+            kicad-cli pcb export pdf RPiHat/RPiHatHVLVPower/RPiHatHVLVPower.kicad_pcb --layers=${layer} --output ./pdfs/PCBsingle/RPiHatHVLVPower.${layer}.pdf
+          done
 
       - name: Making panel PCBs
         run: |
@@ -63,9 +62,11 @@ jobs:
           cd Panel/
           bash ./kikit_script.py
           cd ../
-          kicad-cli pcb export pdf Panel/panel_LEDPulser.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBPanels/LEDPulser.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf Panel/panel_Sensor.kicad_pcb    --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBPanels/RPiHatSensor.${{matrix.pcb_layer}}.pdf
-          kicad-cli pcb export pdf Panel/panel_HVLVPower.kicad_pcb --layers=${{matrix.pcb_layers}} --output ./pdfs/PCBPanels/RPiHatHVLVPower.${{matrix.pcb_layer}}.pdf
+          for layer in 'F.Cu', 'F.Silkscreen', 'B.Cu', 'B.Silkscreen']; do
+            kicad-cli pcb export pdf Panel/panel_LEDPulser.kicad_pcb --layers=${layer} --output ./pdfs/PCBPanels/LEDPulser.${layer}.pdf
+            kicad-cli pcb export pdf Panel/panel_Sensor.kicad_pcb    --layers=${layer} --output ./pdfs/PCBPanels/RPiHatSensor.${layer}.pdf
+            kicad-cli pcb export pdf Panel/panel_HVLVPower.kicad_pcb --layers=${layer} --output ./pdfs/PCBPanels/RPiHatHVLVPower.${layer}.pdf
+          done
 
       - name: Push to pdfs branch
         uses: s0/git-publish-subdir-action@develop
