@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.11.3'
+      #- uses: actions/setup-python@v4
+      #  with:
+      #    python-version: '3.11.3'
 
       - name: Install kicad with kikit
         run: |
@@ -27,7 +27,7 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install kikit
 
-      - name: Getting the empty respository
+      - name: Getting the pdfs respository
         uses: actions/checkout@v3
         with:
           ref: 'pdfs'
@@ -63,6 +63,7 @@ jobs:
 
       - name: Pushing to public PDF pages
         run: |
+          cd ./pdfs
           git add --all
           git commit -m "Updated from Github actions"
           git push origin pdfs
