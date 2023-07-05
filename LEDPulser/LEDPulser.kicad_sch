@@ -1961,7 +1961,7 @@
     (property "Reference" "RT2" (at 111.76 91.44 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "50 Ohm" (at 111.76 93.98 0)
+    (property "Value" "49.9 Ohm" (at 111.76 93.98 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 110.236 94.234 90)
