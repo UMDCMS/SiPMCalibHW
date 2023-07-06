@@ -4,6 +4,13 @@
 
   (paper "A4")
 
+  (title_block
+    (title "I2C low voltage control")
+    (date "2023-07-06")
+    (rev "1")
+    (company "UMD CMS Group")
+  )
+
   (lib_symbols
     (symbol "Analog_ADC:ADS1115IDGS" (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 2.54 13.97 0)
@@ -2057,24 +2064,21 @@
   )
 
   (symbol (lib_id "Symbols:AD8656") (at 176.53 68.58 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid ebe92863-8178-4876-9a60-2fba0d4d656c)
-    (property "Reference" "U4" (at 178.4859 54.61 0)
+    (property "Reference" "U4" (at 173.99 95.25 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "TLV4112" (at 178.4859 57.15 0)
+    (property "Value" "TLV4110" (at 173.99 97.79 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" (at 176.53 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv4112.pdf?ts=1687783617830&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTLV4112" (at 176.53 64.77 0)
+    (property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=26&gotoUrl=https://www.ti.com/lit/gpn/tlv4110" (at 176.53 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Digikey" "https://www.digikey.com/en/products/detail/texas-instruments/TLV4112ID/382135" (at 176.53 68.58 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Mouser" "https://www.mouser.ch/ProductDetail/Texas-Instruments/TLV4112ID?qs=m96fseALk3UEROv0i%252BJJvg%3D%3D" (at 176.53 68.58 0)
+    (property "Mouser" "https://www.mouser.ch/ProductDetail/Texas-Instruments/TLV4110IDR?qs=m96fseALk3WTOvL16bJbJg%3D%3D" (at 176.53 68.58 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f3434a40-b5fd-497e-9312-ab2d0813891c))

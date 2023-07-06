@@ -4,6 +4,12 @@
 
   (paper "A4")
 
+  (title_block
+    (date "2023-07-06")
+    (rev "1.0")
+    (company "UMD CMS HGCAL Calibration project")
+  )
+
   (lib_symbols
     (symbol "Symbols:JP10" (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 0 0)
@@ -207,7 +213,7 @@
     (uuid e9dd7766-0eb1-4263-bf4d-aa6374011a2a)
   )
 
-  (label "1.27mm Jumper arrays" (at 33.02 67.31 0) (fields_autoplaced)
+  (label "2.54mm Jumper arrays" (at 33.02 67.31 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a9e80029-cc02-4265-b735-699e5ebd684b)
   )
