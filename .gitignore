@@ -3,7 +3,7 @@
 **/fp*
 !**/*.md
 
-# Files to track 
+# Files to track
 !**/*.kicad*
 !**/*.pretty
 
@@ -16,3 +16,6 @@ Panel/*
 !.gitignore
 !.github/workflows/pdf_output.yaml
 
+# Manual
+!_manual/image/*.png
+!_manual/README.md
