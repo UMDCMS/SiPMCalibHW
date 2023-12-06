@@ -6,8 +6,8 @@
 
   (title_block
     (title "I2C low voltage control")
-    (date "2023-07-06")
-    (rev "1")
+    (date "2023-12-05")
+    (rev "2")
     (company "UMD CMS Group")
   )
 
@@ -2069,7 +2069,7 @@
     (property "Reference" "U4" (at 173.99 95.25 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "TLV4110" (at 173.99 97.79 0)
+    (property "Value" "TLV4112" (at 173.99 97.79 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" (at 176.53 64.77 0)
