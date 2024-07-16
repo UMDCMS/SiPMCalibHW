@@ -46,6 +46,7 @@ jobs:
           kicad-cli sch export pdf RPiHat/RPiHatHVLVPower/RPiHatHVLVPower.kicad_sch --output ./pdfs/schematics/RPiHatHVLVPower.pdf
           kicad-cli sch export pdf RPiHat/RPiHatSensor/RPiHatSensor.kicad_sch       --output ./pdfs/schematics/RPiHatSensor.pdf
           kicad-cli sch export pdf LEDPulser/LEDPulser.kicad_sch                    --output ./pdfs/schematics/LEDPulser.pdf
+          kicad-cli sch export pdf wiring/wiring.kicad_sch                          --output ./pdfs/schematics/wiring.pdf
 
       - name: Making single PCBs
         run: |
