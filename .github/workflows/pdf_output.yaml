@@ -23,7 +23,7 @@ jobs:
       - name: Install kicad with kikit
         run: |
           sudo apt update
-          sudo add-apt-repository --yes ppa:kicad/kicad-7.0-releases
+          sudo add-apt-repository --yes ppa:kicad/kicad-8.0-releases
           sudo apt update
           sudo apt install --install-recommends kicad
           sudo apt install
