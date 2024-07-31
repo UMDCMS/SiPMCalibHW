@@ -268,9 +268,11 @@
     "net_colors": null,
     "netclass_assignments": {
       "/SiPM_Los/Trigger_DRS4": "EXT_Trigger",
+      "/SiPM_Los_with_Power/SiPM_output": "Channel 0",
       "Trigger_1": "EXT_Trigger",
-      "USB-II": "DRS_USB",
-      "USB-III": "USB_Camera",
+      "USB-II": "USB_Camera",
+      "USB-III": "DRS_USB",
+      "USB-IV": "CR10_USB",
       "unconnected-(SiPM_Los_Board-SiPM_output-Pad)": "Channel 0"
     },
     "netclass_patterns": []
@@ -399,7 +401,7 @@
     ],
     [
       "80282a28-3861-40ca-b12f-88da07f7028f",
-      "SiPM_Los"
+      "SiPM_Los_with_Power"
     ],
     [
       "6d3dd7a7-b416-434e-8769-495df1fd94f4",

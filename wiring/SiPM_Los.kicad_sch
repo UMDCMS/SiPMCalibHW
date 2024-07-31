@@ -754,16 +754,6 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 119.38) (xy 240.03 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0ec316f4-3f6c-42a6-9463-d9b8506c72f5")
-	)
-	(wire
-		(pts
 			(xy 125.73 66.04) (xy 125.73 74.93)
 		)
 		(stroke
@@ -804,16 +794,6 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 137.16) (xy 170.18 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "33ff39e7-b6e1-47ba-8ee0-c57b91c067e9")
-	)
-	(wire
-		(pts
 			(xy 224.79 107.95) (xy 222.25 107.95)
 		)
 		(stroke
@@ -821,16 +801,6 @@
 			(type default)
 		)
 		(uuid "3a7f73fd-0148-4a67-84fc-5e6fec728d4e")
-	)
-	(wire
-		(pts
-			(xy 135.89 129.54) (xy 135.89 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3fced4ab-8ac5-452a-90de-536d62b3ec5c")
 	)
 	(wire
 		(pts
@@ -864,16 +834,6 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 137.16) (xy 170.18 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4fea3131-7eec-4ff2-8621-5d728366fe92")
-	)
-	(wire
-		(pts
 			(xy 219.71 107.95) (xy 222.25 107.95)
 		)
 		(stroke
@@ -894,33 +854,13 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 130.81) (xy 170.18 130.81)
+			(xy 240.03 95.25) (xy 252.73 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9b9f2e5c-382f-421e-8e01-16c8f403fabe")
-	)
-	(wire
-		(pts
-			(xy 62.23 123.19) (xy 139.7 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b2a3220b-7d12-4519-a3e3-e73f3cadb53e")
-	)
-	(wire
-		(pts
-			(xy 62.23 129.54) (xy 135.89 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "be9f2a05-8fb3-47e2-b17a-f1f8fec47afc")
+		(uuid "b01f8f75-4ebe-451b-ab1b-ccf6b5bd6b7e")
 	)
 	(wire
 		(pts
@@ -931,16 +871,6 @@
 			(type default)
 		)
 		(uuid "c001aca1-4c9d-4337-a76a-bc4aba5f4f7c")
-	)
-	(wire
-		(pts
-			(xy 166.37 119.38) (xy 240.03 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2b12ce1-89c2-4434-8858-359c5fbc3ae3")
 	)
 	(wire
 		(pts
@@ -983,18 +913,6 @@
 		(uuid "fd8d2efa-ef90-4c49-bc0a-35982b365576")
 	)
 	(rectangle
-		(start 139.7 118.11)
-		(end 166.37 133.35)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid b94e64ac-184d-4f3a-9955-1a90e4104a2c)
-	)
-	(rectangle
 		(start 175.26 84.836)
 		(end 194.31 105.156)
 		(stroke
@@ -1017,16 +935,6 @@
 			(type none)
 		)
 		(uuid db658fec-8925-4bd6-9143-4f527def7ac1)
-	)
-	(text "DRS4\nDocumentation: https://www.psi.ch/en/ltp-muon-physics/documentation"
-		(exclude_from_sim no)
-		(at 152.654 115.316 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "4947b06c-b12e-4946-b593-bd4f3b855442")
 	)
 	(text "+6V should be provided using \nElenco power supply (cleanest for 6V voltage)"
 		(exclude_from_sim no)
@@ -1060,17 +968,17 @@
 		)
 		(uuid "e46158fb-4653-44e2-b2b6-69c7e351d532")
 	)
-	(hierarchical_label "Trigger_DRS4"
+	(hierarchical_label "SiPM_output"
 		(shape input)
-		(at 62.23 129.54 180)
+		(at 252.73 95.25 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "779434e0-c537-4411-9cd5-9e1b7b0f1670")
+		(uuid "085f54ef-1d7b-42fc-8513-10052d90fffd")
 	)
 	(hierarchical_label "SiPM_TEMP"
 		(shape input)
@@ -1084,18 +992,6 @@
 		)
 		(uuid "b43d6ba4-1bb7-4cf9-9824-4be992455950")
 	)
-	(hierarchical_label "USB_DRS4"
-		(shape input)
-		(at 62.23 123.19 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d6d50b99-8410-4b2e-b8e6-ed56813ac785")
-	)
 	(hierarchical_label "USB_Rigol"
 		(shape input)
 		(at 63.5 66.04 180)
@@ -1107,138 +1003,6 @@
 			(justify right)
 		)
 		(uuid "f18745bb-319b-4ed5-bd8f-f9b6c5c94a6c")
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 166.37 124.46 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2ea755f7-a7c0-40e4-ab7f-1f7545f5c501")
-		(property "Netclass" "Channel 2"
-			(at 162.814 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify right)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 166.37 119.38 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "35901f71-5edb-4b9f-8bca-ffaf9b4c3baa")
-		(property "Netclass" "Channel 0"
-			(at 162.814 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify right)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 166.37 127 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "54b9e8b4-6021-4380-8fab-0dfb505d7717")
-		(property "Netclass" "Channel 3"
-			(at 162.814 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify right)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 166.37 121.92 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9bebef59-2053-40e4-9582-2ca36bbe493a")
-		(property "Netclass" "Channel 1"
-			(at 162.814 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify right)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 139.7 123.19 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "a4814a8d-5d3f-4972-bd57-18bc3f4fe0a1")
-		(property "Netclass" "DRS_USB"
-			(at 142.24 122.4915 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 166.37 130.81 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "da0f794d-fac1-443e-83ee-976dfb02594c")
-		(property "Netclass" "EXT_Trigger"
-			(at 162.814 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify right)
-			)
-		)
 	)
 	(symbol
 		(lib_id "power:+6V")
